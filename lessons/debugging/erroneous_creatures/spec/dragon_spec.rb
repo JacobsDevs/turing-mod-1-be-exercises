@@ -1,3 +1,4 @@
+require 'rspec'
 require'./lib/dragon'
 
 RSpec.describe Dragon do
