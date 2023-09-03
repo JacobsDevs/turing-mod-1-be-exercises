@@ -8,8 +8,14 @@ RSpec.describe Game do
 			expect(mega_millions.name).to eq('Mega Millions')
 			expect(pick_4.cost).to eq(2)
 			expect(mega_millions.cost).to eq(5)
+		end
+	end
+	describe '#national_drawing?' do
+		it 'returns if the game has national_drawing' do
+			pick_4 = Game.new('Pick 4', 2)
+			mega_millions = Game.new('Mega Millions', 5, true)
 			expect(mega_millions.national_drawing?).to eq(true)
 			expect(pick_4.national_drawing?).to eq(false)
 		end
-	end
+	end		
 end
