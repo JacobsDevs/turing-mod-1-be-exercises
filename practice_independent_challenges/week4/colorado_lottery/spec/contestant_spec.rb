@@ -13,8 +13,8 @@ RSpec.describe Contestant do
 			expect(alexander.age).to eq(28)
 			expect(alexander.state_of_residence).to eq('CO')
 			expect(alexander.spending_money).to eq(10)
-		  expect(alexander.out_of_state?).to eq(false)
 			expect(alexander.game_interests).to eq([])
+			expect(alexander.out_of_state?).to eq(false)
 		end
 	end
 	describe '#add_game_interest' do
