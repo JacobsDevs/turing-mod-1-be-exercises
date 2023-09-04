@@ -33,4 +33,8 @@ class Curator
 	def artists_with_multiple_photographs
 	  artists_and_photographs.select {|artist, photos| artist if photos.length > 1}.keys
 	end
+
+	def photographs_from_country(country)
+		artists_and_photographs.select {|artist, photos| artist if artist.country == country}.values.flatten
+	end
 end
