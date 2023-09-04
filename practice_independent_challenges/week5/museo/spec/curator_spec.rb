@@ -132,8 +132,12 @@ RSpec.describe Curator do
 			@curator.add_photograph(@photo_3)
 			@curator.add_photograph(@photo_4)
 			@curator.add_photograph(@photo_5)
+		end
+		it 'can returns a list with #artist_photographs' do
+		  expect(@curator.artist_photographs(@artist_1)).to eq([@photo_1, @photo_2])
+		end
 		it 'can return a hash of all #artists_and_photographs' do
-			expect(@curator.artists_and_photographs).to eq({@artist_1=>[@photo_1, @photo_2], @artist_2=>[@photo_3], @artist_3=>[@photo_4, @photo_5]})
+			expect(@curator.artists_and_photographs).to eq({@artist_1=>[@photo_1, @photo_2], @artist_2=>[@photo_4, @photo_5], @artist_3=>[@photo_3]})
 		end
 		it 'can return an array of #artists_with_multiple_photographs' do
 		  expect(@curator.artists_with_multiple_photographs).to eq([@artist_1, @artist_3])
