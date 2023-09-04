@@ -5,8 +5,8 @@ class ColoradoLottery
 
 	def initialize
 		@registered_contestants = Hash.new {|h, k| h[k] = []}
+		@current_contestants = Hash.new {|h, k| h[k] = []}
 		@winners = []
-		@current_contestants = {}
 	end
 
 	def interested_and_18?(contestant, game)
