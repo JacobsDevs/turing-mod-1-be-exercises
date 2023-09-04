@@ -13,4 +13,5 @@ RSpec.describe Photograph do
 			expect(photograph.artist_id).to eq("4")
 			expect(photograph.year).to eq("1954")
 		end
+	end
 end
