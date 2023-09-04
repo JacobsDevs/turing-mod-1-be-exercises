@@ -1,4 +1,5 @@
 require './lib/ceo'
+require 'pry' 
 
 RSpec.describe Ceo do
 
@@ -15,6 +16,11 @@ RSpec.describe Ceo do
 
   describe "Has a name, ID, and total_compensation" do
     # Write tests to prove that a Ceo instance can have a Name and ID number, like any other Employee.
+		it "has a name" do
+			ceo = Ceo.new(15,20, "john", 5)
+			expect(ceo.name).to eq("john")
+			expect(ceo.id).to eq(5)
+		end
     # Also, the CEO should be able to receive a total compensation. Write at least one test that proves they can access this method.
   end
 

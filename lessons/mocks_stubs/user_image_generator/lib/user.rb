@@ -2,7 +2,8 @@ class User
   attr_reader :email,
               :image_generator,
               :id,
-              :image_generator_objects
+              :image_generator_objects,
+							:profile_image
 
   def initialize(email, image_generator)
     @email = email
@@ -20,7 +21,7 @@ class User
     gets.chomp.to_i
   end
 
-  def add_image_generators(image)
+  def add_image_history(image)
     @image_history << image
   end
 

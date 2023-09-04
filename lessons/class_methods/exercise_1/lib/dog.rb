@@ -18,13 +18,13 @@ class Dog
 
   def woof
     #binding.pry ## When calling .woof on a Dog class, will this pry be hit?
-    "Woof!"
     @number_of_woofs += 1
+    "Woof!"
   end
 
   def self.woof
     "Self woof!"
-    #binding.pry ## Can we call @number_of_woofs inside this class method? Why or why not?
+    #binding.pry ## Can we call @number_of_woofs inside this class method? Why or whyexit not?
   end
 
 end
