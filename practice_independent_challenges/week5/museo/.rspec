@@ -3,4 +3,3 @@
 --require curator
 --require file_io
 --require photograph
---require csv

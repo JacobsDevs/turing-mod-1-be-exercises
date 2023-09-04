@@ -1,6 +1,4 @@
-require './lib/employee'
-
-class Manager < Employee
+class Manager
   attr_reader :base_salary, :per_team_rate, :departments
   def initialize(base_salary)
     @base_salary = base_salary

@@ -10,8 +10,4 @@ class Course
   def add_student(student)
     @students << student
   end
-
-	def groups_represented
-	  students.map {|student| student.group}.uniq
-	end
 end

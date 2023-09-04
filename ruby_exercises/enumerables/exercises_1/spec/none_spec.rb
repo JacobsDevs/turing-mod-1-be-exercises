@@ -8,43 +8,35 @@ RSpec.describe 'none' do
     expect(none_broken).to eq(true)
   end
 
-  it 'double negative' do
+  xit 'double negative' do
     numbers = [9, 3, 3, 7, 6, -5, 1]
     not_none_negative = numbers.none? do |number|
-      number < 0
+      # Your code goes here
     end
     expect(not_none_negative).to eq(false)
   end
 
-  it 'none are negative' do
+  xit 'none are negative' do
     numbers = [9, 3, 1, 8, 3, 3, 5]
-    none_negative = numbers.none? do |number|
-			number < 0
-		end
+    # Your code goes here
     expect(none_negative).to eq(true)
   end
 
-  it 'none shall pass' do
+  xit 'none shall pass' do
     critters = ["elf", "hobbit", "dwarf", "wizard", "human"]
-    none_shall_pass = critters.none? do |critter|
-			critter == "Balrog"
-		end
+    # Your code goes here
     expect(none_shall_pass).to eq(true)
   end
 
-  it 'one or more shall pass' do
+  xit 'one or more shall pass' do
     phrases = ["go", "left", "can cross", "shall pass", "must stay", "tarried"]
-    none_shall_pass = phrases.none? do |phrase|
-			phrase == "can cross" || "shall pass"
-		end
+    # Your code goes here
     expect(none_shall_pass).to eq(false)
   end
 
-  it 'none even' do
+  xit 'none even' do
     numbers = [3, 9, 15, 21, 19]
-    none_even = numbers.none? do |number|
-			number.even?
-		end
+    # Your code goes here
     expect(none_even).to eq(true)
   end
 end

@@ -1,6 +1,4 @@
-require './lib/employee'
-
-class Intern < Employee
+class Intern
   attr_reader :base_salary
   
   def initialize(base_salary)

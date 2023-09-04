@@ -9,5 +9,4 @@ Run `ruby runner.rb` from the root of this folder (`lesson_example`). A `pry` br
 
 Using TDD (and following the rules of inheritance), give each class (`Ceo`, `Manager`, and `Intern`) the ability to have readable `name` and `id` attributes, as well as the ability to access the `total_compensation` method. There is a `describe` block already set up in the respective classes where you can write your tests before your code.
 
-To confirm that you've implemented inheritance correctly, run `rspec spec` both *before* and *after* implementing inheritance. The existing tests *will 
-need to change* during your refactoring!  But, if everything went well, your tests should pass both before and after the refactoring takes place.
+To confirm that you've implemented inheritance correctly, run `rspec spec` both *before* and *after* implementing inheritance. The existing tests *will need to change* during your refactoring!  But, if everything went well, your tests should pass both before and after the refactoring takes place.

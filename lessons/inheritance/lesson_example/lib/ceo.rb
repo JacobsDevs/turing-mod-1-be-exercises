@@ -1,22 +1,11 @@
-require './lib/employee'
-
-class Ceo < Employee
+class Ceo
 
   attr_reader :base_salary,
               :bonus
 
-  def initialize(base_salary, bonus, name=nil, id=0)
+  def initialize(base_salary, bonus)
     @base_salary = base_salary
     @bonus       = bonus
-		super(name, id)
   end
-  
-	def benefits
-	  super.push(:health_insurance)
-	end
-
-	def total_compensation
-	  super() + 1
-	end
 
 end

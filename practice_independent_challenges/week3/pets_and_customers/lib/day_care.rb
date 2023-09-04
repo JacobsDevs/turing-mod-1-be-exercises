@@ -1,4 +1,4 @@
-class Groomer
+class DayCare
   attr_reader :name,
               :customers
 
@@ -11,18 +11,18 @@ class Groomer
     @customers << customer
   end
 
-  def customers_with_oustanding_balances
-    @customers.find_all do |customer|
-      customer.outstanding_balance != 0
+  def customer_by_id(id)
+    @customers.find do |customer|
+      customer.id == id
     end
   end
 
-  def number_of_pets(type)
+  def unfed_pets
     pets = @customers.map do |customer|
       customer.pets
     end.flatten
-    pets.count do |pet|
-      pet.type == type
+    pets.find_all do |pet|
+      !pet.fed?
     end
   end
 end

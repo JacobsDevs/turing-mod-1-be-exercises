@@ -11,7 +11,7 @@ RSpec.describe 'inject pattern test' do
     expect(difference).to eq(-170)
   end
 
-  it 'test 2' do
+  xit 'test 2' do
     bills = {
       rent: 800,
       car: 240,
@@ -28,19 +28,19 @@ RSpec.describe 'inject pattern test' do
     expect(difference).to eq(-2262)
   end
 
-  it 'test 3' do
+  xit 'test 3' do
     numbers = [2, 3, 5, 7]
     # Iterate over the numbers array defined above
     # to find the product of all the numbers
 
     product = 1
     numbers.each do |number|
-      product *= number
+      # Your Code Here
     end
     expect(product).to eq(210)
   end
 
-  it 'test 4' do
+  xit 'test 4' do
     scrabble_score = {
       letter_total: 23,
       word_muliplier: 3,
@@ -51,21 +51,19 @@ RSpec.describe 'inject pattern test' do
 
     product = 1
     scrabble_score.each do |(key, value)|
-      product *= value
+      # Your Code Here
     end
     expect(product).to eq(138)
   end
 
-  it 'test 5' do
+  xit 'test 5' do
     airlines = ["Southwest", "Delta", "United", "Frontier"]
     # Iterate over the airlines array defined above to
     # create a hash with the name of the airline as the
     # key and the length of the name as the value
 
     number_of_letters = {}
-    airlines.each do |airline|
-			number_of_letters[airline] = airline.length
-		end
+    # Your Code Here
 
     expected = {
       "Southwest" => 9,
@@ -76,7 +74,7 @@ RSpec.describe 'inject pattern test' do
     expect(number_of_letters).to eq(expected)
   end
 
-  it 'test 6' do
+  xit 'test 6' do
     topping_calories = {
       pepperoni: 430,
       sausage: 400,
@@ -88,25 +86,22 @@ RSpec.describe 'inject pattern test' do
     # to create an array of all the toppings
 
     toppings = []
-    topping_calories.each do |key, value|
-			toppings << key.to_s
-		end
+    # Your Code Here
 
     expect(toppings).to eq(["pepperoni", "sausage", "olives", "peppers", "onions"])
   end
 
-  it 'test 7' do
+  xit 'test 7' do
     elements = [["a", 1], ["b", 9], ["c", 21]]
-    sum_of_second_values = 0
+    # Iterate over the elements array defined above
+    # to find the sum of all the integers
 
-		elements.each do |element|
-			sum_of_second_values += element[1]
-		end
+    # Your Code Here
 
     expect(sum_of_second_values).to eq(31)
   end
 
-  it 'test 8' do
+  xit 'test 8' do
     toppings = {
       pepperoni: {
         calories: 430,
@@ -132,16 +127,13 @@ RSpec.describe 'inject pattern test' do
     # Iterate over the toppings hash defined above to find
     # total calories. You will need to multiply each topping's
     # calorie count by the quantity
-    total_calories = 0
-		toppings.each do |key, value|
-			total_calories += (value[:calories] * value[:quantity])
-		end
+
     # Your Code Here
 
     expect(total_calories).to eq(6950)
   end
 
-  it 'test 9' do
+  xit 'test 9' do
     grades = {
       quizzes: [8, 5, 3, 6, 5],
       tests: [23, 21, 24],
@@ -152,19 +144,13 @@ RSpec.describe 'inject pattern test' do
     # to calculate the final grade. The final grade is
     # calculated by averaging each category together and
     # summing all of the averages
-    final_grade = 0.0
-    grades.each do |key, value|
-      average = 0.0
-			value.each do |value|
-				average += value.to_f
-			end
-			average = average / value.length.to_f
-			final_grade += average
-		end
+
+    # Your code goes here
+
     expect(final_grade).to eq(85.40)
   end
 
-  it 'test 10' do
+  xit 'test 10' do
     menu = {
       empanadas: {
         flavors: ["chicken", "potato", "steak", "veggie"],
@@ -184,17 +170,7 @@ RSpec.describe 'inject pattern test' do
     # version of the menu
 
     # Your Code Here
-		printable_menu = "Menu:\n"
-		menu.each do |key, value|
-			flavors = "- "
-			value[:flavors].each_with_index do |flavor, index|
-				flavors += "#{flavor}, " if index + 1 != value[:flavors].length
-				flavors += "and #{flavor}" if index + 1 == value[:flavors].length
-			end
-			gluten = "non gluten free" if value[:gluten_free] == false
-			gluten = "gluten free" if value[:gluten_free] == true
-			printable_menu += "#{flavors} #{key} (#{gluten})\n"
-		end
+
     expected =  "Menu:\n"\
                 "- chicken, potato, steak, and veggie empanadas (non gluten free)\n"\
                 "- blueberry, and vanilla scones (non gluten free)\n"\

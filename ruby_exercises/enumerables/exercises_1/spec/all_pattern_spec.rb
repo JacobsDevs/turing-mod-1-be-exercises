@@ -8,93 +8,67 @@ RSpec.describe 'All Pattern' do
     expect(all_zeros).to eq(true)
   end
 
-  it 'not all zeros' do
+  xit 'not all zeros' do
     numbers = [0, 0, 0, 0, 1, 0, 0, 0]
     all_zeros = true
     numbers.each do |number|
-			all_zeros = false unless number.zero?
+      # Your code goes here
     end
     expect(all_zeros).to eq(false)
   end
 
-  it 'all gone' do
+  xit 'all gone' do
     words = ["gone", "gone", "gone", "gone", "gone", "gone", "gone"]
     all_gone = true
-		words.each do |word|
-      all_gone = false unless word == "gone"
-		end
+    # Your code goes here
     expect(all_gone).to eq(true)
   end
 
-  it 'not all gone' do
+  xit 'not all gone' do
     words = ["gone", "gone", "gone", "gone", "gone", "there", "gone", "gone"]
-    all_gone = true
-		words.each do |word|
-			all_gone = false unless word == "gone"
-		end
-		expect(all_gone).to eq(false)
+    # Your code goes here
+    expect(all_gone).to eq(false)
   end
 
-  it 'all empty' do
+  xit 'all empty' do
     strings = ["", "", "", "", "", "", ""]
-    all_empty = true
-		strings.each do |string|
-			all_empty = false unless string.empty?
-		end
+    # Your code goes here
     expect(all_empty).to eq(true)
   end
 
-  it 'not all empty' do
+  xit 'not all empty' do
     strings = ["", "", "", "full", "", "", ""]
-    all_empty = true
-		strings.each do |string|
-			all_empty = false unless string.empty?
-		end
+    # Your code goes here
     expect(all_empty).to eq(false)
   end
 
-  it 'not all uppercase' do
+  xit 'not all uppercase' do
     words = ["DOUGHNUT", "CASH", "MAIN", "bOWl", "SMACK", "SAND"]
-    all_caps = true
-		words.each do |word|
-			all_caps = false unless word == word.upcase
-		end
+    # Your code goes here
     expect(all_caps).to eq(false)
   end
 
-  it 'all lies' do
+  xit 'all lies' do
     lies = [false, false, false, false]
-    all_lies = true
-		lies.each do |lie|
-			all_lies = false unless lie == false
-		end
-		expect(all_lies).to eq(true)
+    # Your code goes here
+    expect(all_lies).to eq(true)
   end
 
-  it 'all multiples of seven' do
+  xit 'all multiples of seven' do
     numbers = [42, 14, 35, 49, 28, 56, 21, 7]
-    all_multiples_of_7 = true
-		numbers.each do |number|
-			all_multiples_of_7 = false unless number % 7 == 0
-		end
+    # Your code goes here
     expect(all_multiples_of_7).to eq(true)
   end
 
-  it 'not all 3 digits long' do
-    numbers = [981, 831, 509, 332, 892, 8992, 110]
-    all_3_digits = true
-		numbers.each do |number|
-			all_3_digits = false unless number.to_s.length == 3
-		end
+  xit 'not all 3 digits long' do
+    numbers = [981, 831, 509, 332, 892, 8999, 110]
+    # Your code goes here
     expect(all_3_digits).to eq(false)
   end
 
-  it 'all four letter words' do
+  xit 'all four letter words' do
     words = ["love", "hate", "fire", "bird", "call"]
-    all_4_letters = true
-		words.each do |word|
-			all_4_letters = false unless word.length == 4
-		end
+    # Your code goes here
     expect(all_4_letters).to eq(true)
   end
 end

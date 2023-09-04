@@ -31,17 +31,17 @@ RSpec.describe 'select pattern' do
     expect(evens).to eq(expected)
   end
 
-  it 'test 3' do
+  xit 'test 3' do
     rainbow = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
     greater_than_four = []
     rainbow.each do |color|
-      greater_than_four << color if color.length > 4
+      #Your Code Here
     end
 
     expect(greater_than_four).to eq(["orange", "yellow", "green", "indigo", "violet"])
   end
 
-  it 'test 4' do
+  xit 'test 4' do
     rainbow = {
       first: "red",
       second: "orange",
@@ -53,7 +53,7 @@ RSpec.describe 'select pattern' do
     }
     greater_than_four = {}
     rainbow.each do |position, color|
-      greater_than_four[position] = color if color.length > 4
+      #Your Code Here
     end
 
     expected = {
@@ -63,20 +63,18 @@ RSpec.describe 'select pattern' do
       sixth: "indigo",
       seventh: "violet"
     }
-    expect(greater_than_four).to eq(expected)
+    expected(greater_than_four).to eq(expected)
   end
 
-  it 'test 5' do
+  xit 'test 5' do
     furniture = ["dining table", "bed", "coffee table", "deck chairs"]
     words_with_c = []
-    furniture.each do |item|
-			words_with_c << item if item.include?("c")
-		end
+    #Your Code Here
 
     expect(words_with_c).to eq(["coffee table", "deck chairs"])
   end
 
-  it 'test 6' do
+  xit 'test 6' do
     furniture = {
       dining_room: "dining table",
       bedroom: "bed",
@@ -84,9 +82,8 @@ RSpec.describe 'select pattern' do
       patio: "deck chairs"
     }
     words_with_c = {}
-    furniture.each do |key, value|
-			words_with_c[key] = value if value.include?("c")
-		end
+    #Your Code Here
+
     expected = {
       living_room: "coffee table",
       patio: "deck chairs"
@@ -94,26 +91,20 @@ RSpec.describe 'select pattern' do
     expect(words_with_c).to eq(expected)
   end
 
-  it 'test 7' do
+  xit 'test 7' do
     meals = ["chips and salsa", "chicken alfredo", "banana pudding"]
-    two_words = []
-		meals.each do |meal|
-			two_words << meal if meal.split(" ").length == 2
-		end
+    #Your Code Here
 
     expect(two_words).to eq(["chicken alfredo", "banana pudding"])
   end
 
-  it 'test 8' do
+  xit 'test 8' do
     meal = {
       appetizer: "chips and salsa",
       entre: "chicken alfredo",
       dessert: "banana pudding"
     }
-    two_words = {}
-		meal.each do |key, value|
-			two_words[key] = value if value.split(" ").length == 2
-		end
+    #Your Code Here
 
     expected = {
       entre: "chicken alfredo",
@@ -123,17 +114,14 @@ RSpec.describe 'select pattern' do
   end
 
 
-  it 'test 9' do
+  xit 'test 9' do
     prices = [3, 1.4, 3.5, 2, 4.9, 9.1, 8.0]
-    floats = []
-		prices.each do |price|
-			floats << price if price.is_a? Float
-		end
+    #Your Code Here
 
     expect(floats).to eq([1.4, 3.5, 4.9, 9.1, 8.0])
   end
 
-  it 'test 10' do
+  xit 'test 10' do
     items = {
       tv: 3,
       toaster: 1.4,
@@ -143,10 +131,7 @@ RSpec.describe 'select pattern' do
       sack_o_potatoes: 9.1,
       tonka_truck: 8.0
     }
-    floats = {}
-		items.each do |key, value|
-			floats[key] = value if value.is_a? Float
-		end
+    #Your Code Here
 
     expected = {
       toaster: 1.4,

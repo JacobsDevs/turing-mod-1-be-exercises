@@ -65,7 +65,7 @@ RSpec.describe School do
       expect(@school.groups.include?(@student1.group)).to eq(true)
     end
 
-    it 'can assign all students to groups at once' do
+    xit 'can assign all students to groups at once' do
       @school.add_course(@course1)
       @school.add_course(@course2)
       @school.add_course(@course3)
@@ -89,7 +89,7 @@ RSpec.describe School do
       end
     end
 
-    it 'can list all students by name' do
+    xit 'can list all students by name' do
       @school.add_course(@course1)
       @school.add_course(@course2)
       @school.add_course(@course3)
@@ -107,7 +107,7 @@ RSpec.describe School do
       expect(@school.names).to eq(expected)
     end
 
-    it 'can return all students by group' do
+    xit 'can return all students by group' do
       @school.add_course(@course1)
       @school.add_course(@course2)
       @school.add_course(@course3)

@@ -8,51 +8,46 @@ RSpec.describe 'reduce' do
     expect(result).to eq(473)
   end
 
-  it 'subtracts a list of numbers' do
+  xit 'subtracts a list of numbers' do
     numbers = [28, 12, 38, 1, 91]
     result = numbers.reduce(0) do |difference, number|
-      difference - number
+      # Your code goes here
     end
     expect(result).to eq(-170)
   end
 
-  it 'multiplies a list of numbers' do
+  xit 'multiplies a list of numbers' do
     numbers = [2, 3, 5, 7]
-    result = numbers.reduce(1) do |multiple, number|
-		  multiple * number
-		end
+    # initial value is 1
+    # Your code goes here
     expect(result).to eq(210)
   end
 
-  it 'capitalize key words in phrase' do
+  xit 'capitalize key words in phrase' do
     keywords = ["fish", "blue"]
-    result = keywords.reduce('one fish two fish red fish blue fish') do |phrase, word|
-      phrase.gsub(word, word.upcase)
-		end
+    # initial value is 'one fish two fish red fish blue fish'
+    # Your code goes here
     expect(result).to eq('one FISH two FISH red FISH BLUE FISH')
   end
 
-  it 'divides 560 by a bunch of numbers' do
+  xit 'divides 560 by a bunch of numbers' do
     numbers = [2, 2, 2, 5, 7]
-    result = numbers.reduce(560) do |divided, number|
-			divided/number
-		end
+    # initial value is 560
+    # Your code goes here
     expect(result).to eq(2)
   end
 
-  it 'subtract smallest values from 100' do
+  xit 'subtract smallest values from 100' do
     elements = [[8, 5, 3], [1, 9, 11], [4, 7, 2], [19, 34, 6]]
-    result = elements.reduce(100) do |subtract, element|
-			subtract - element.min
-		end
+    # initial value is 100
+    # Your code goes here
     expect(result).to eq(88)
   end
 
-  it 'adds all second values together' do
+  xit 'adds all second values together' do
     elements = [["a", 1], ["b", 9], ["c", 21]]
-    result = elements.reduce(0) do |sum, element|
-			sum + element[1]
-		end
+    # initial value is 0
+    # Your code goes here
     expect(result).to eq(31)
   end
 end

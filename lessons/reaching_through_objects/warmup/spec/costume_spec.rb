@@ -8,7 +8,7 @@ RSpec.describe Costume do
     expect(costume.style).to eq('Dragon')
   end
 
-  it 'has a different style of costume' do
+  xit 'has a different style of costume' do
     costume = Costume.new('Princess')
 
     expect(costume.style).to eq('Princess')

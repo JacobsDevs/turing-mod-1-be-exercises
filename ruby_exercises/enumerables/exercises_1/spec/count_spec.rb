@@ -8,59 +8,47 @@ RSpec.describe 'count test' do
     expect(tally).to eq(3)
   end
 
-  it 'numbers greater than 17' do
+  xit 'numbers greater than 17' do
     numbers = [9, 18, 12, 17, 1, 3, 99]
     tally = numbers.count do |number|
-      number > 17
+      # Your code goes here
     end
     expect(tally).to eq(2)
   end
 
-  it 'words that are uppercase' do
+  xit 'words that are uppercase' do
     words = ["trousers", "SOCKS", "sweater", "Cap", "SHOE", "TIE"]
-    tally = words.count do |word|
-			word == word.upcase
-		end
+    # Your code goes here
     expect(tally).to eq(3)
   end
 
-  it 'words ending in ing' do
+  xit 'words ending in ing' do
     words = ["thought", "brake", "shin", "juice", "trash"]
-    tally = words.count do |word|
-			word[-3..-1] == "ing"
-		end
+    # Your code goes here
     expect(tally).to eq(0)
   end
 
-  it 'even numbers' do
+  xit 'even numbers' do
     numbers = [9, 2, 1, 3, 18, 39, 71, 4, 6]
-    tally = numbers.count do |number|
-			number.even?
-		end
+    # Your code goes here
     expect(tally).to eq(4)
   end
 
-  it 'multiples of 5' do
+  xit 'multiples of 5' do
     numbers = [2, 5, 19, 25, 35, 67]
-    tally = numbers.count do |number|
-			number % 5 == 0
-		end
+    # Your code goes here
     expect(tally).to eq(3)
   end
 
-  it 'round prices' do
+  xit 'round prices' do
     prices = [1.0, 3.9, 5.99, 18.5, 20.0]
-    tally = prices.count do |price|
-		  price == price.round
-		end
+    # Your code goes here
     expect(tally).to eq(2)
   end
 
-  it 'four letter words' do
+  xit 'four letter words' do
     words = ["bake", "bark", "corn", "apple", "wart", "bird", "umbrella", "fart"]
-    tally = words.count do |word|
-			word.length == 4
-		end
+    # Your code goes here
     expect(tally).to eq(6)
   end
 end
