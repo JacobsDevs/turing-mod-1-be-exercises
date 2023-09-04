@@ -35,8 +35,8 @@ RSpec.describe Contestant do
 				spending_money: 10})
 			mega_millions = Game.new('Mega Millions', 5, true)
 			pick_4 = Game.new('Pick 4', 2)
-			alexander.add_game_interest(mega_millions)
-			alexander.add_game_interest(pick_4)
+			alexander.add_game_interest('Mega Millions')
+			alexander.add_game_interest('Pick 4')
 			expect(alexander.game_interests).to eq(["Mega Millions", "Pick 4"])
 		end
 	end
