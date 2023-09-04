@@ -29,4 +29,8 @@ class ColoradoLottery
 			return false
 		end
 	end
+
+	def eligible_contestants(game)
+		@registered_contestants[game].select {|contestant| contestant.spending_money > game.cost}
+	end
 end
