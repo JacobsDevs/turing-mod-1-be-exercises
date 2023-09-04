@@ -140,7 +140,7 @@ RSpec.describe Curator do
 			expect(@curator.artists_and_photographs).to eq({@artist_1=>[@photo_1, @photo_2], @artist_2=>[@photo_4, @photo_5], @artist_3=>[@photo_3]})
 		end
 		it 'can return an array of #artists_with_multiple_photographs' do
-		  expect(@curator.artists_with_multiple_photographs).to eq([@artist_1, @artist_3])
+		  expect(@curator.artists_with_multiple_photographs).to eq([@artist_1, @artist_2])
 		end
 		it 'can return an array of #photographs_from_country' do
       expect(@curator.photographs_from_country("France")).to eq([@photo_1, @photo_2, @photo_3])

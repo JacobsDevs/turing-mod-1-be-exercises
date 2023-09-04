@@ -29,4 +29,8 @@ class Curator
 	def artist_photographs(artist)
 		@photographs.select {|photo| photo.artist_id == artist.id}
 	end
+
+	def artists_with_multiple_photographs
+	  artists_and_photographs.select {|artist, photos| artist if photos.length > 1}.keys
+	end
 end
