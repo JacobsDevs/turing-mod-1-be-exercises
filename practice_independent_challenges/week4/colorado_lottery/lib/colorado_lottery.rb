@@ -24,13 +24,26 @@ class ColoradoLottery
 	def register_contestant(contestant, game)
     if can_register?(contestant, game)
 			@registered_contestants[game] << contestant
-			return contestant
+			contestant
 		else
-			return false
+			false
 		end
 	end
 
 	def eligible_contestants(game)
 		@registered_contestants[game].select {|contestant| contestant.spending_money > game.cost}
+	end
+
+	def current_contestants
+	  @registered_contestants.each do |game, contestants|
+			eligible = eligible_contestants(game)
+			charge(eligible, game)
+			@current_contestants[game] += eligible.map {|contestant| contestant.full_name}
+		end
+		@current_contestants
+	end
+
+	def charge(contestants, game)
+		contestants.each {|contestant| contestant.spending_money -= game.cost}
 	end
 end

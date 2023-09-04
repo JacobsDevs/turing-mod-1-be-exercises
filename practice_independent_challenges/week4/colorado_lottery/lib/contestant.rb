@@ -2,8 +2,9 @@ class Contestant
 	attr_reader :full_name,
 							:age,
 							:state_of_residence,
-							:spending_money,
 							:game_interests
+
+	attr_accessor :spending_money
 
   def initialize(data)
 		@first_name = data[:first_name]
