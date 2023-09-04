@@ -137,7 +137,7 @@ RSpec.describe ColoradoLottery do
 			expect(lottery.register_contestant(alexander, mega_millions)).to eq(alexander)
 			expect(lottery.register_contestant(winston, mega_millions)).to eq(winston)
 			expect(lottery.register_contestant(benjamin, mega_millions)).to eq(false)
-			expect(lottery.registered_contestants).to eq({mega_millions: [alexander, winston]})
+			expect(lottery.registered_contestants).to eq({mega_millions=>[alexander, winston]})
 		end
 	end
 end

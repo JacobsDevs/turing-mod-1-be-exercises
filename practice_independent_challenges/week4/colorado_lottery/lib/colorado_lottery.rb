@@ -4,7 +4,7 @@ class ColoradoLottery
 							:current_contestants
 
 	def initialize
-		@registered_contestants = {}
+		@registered_contestants = Hash.new {|h, k| h[k] = []}
 		@winners = []
 		@current_contestants = {}
 	end
@@ -19,5 +19,14 @@ class ColoradoLottery
 
 	def valid_location?(contestant, game)
 		contestant.state_of_residence == 'CO' || game.national_drawing?
+	end
+
+	def register_contestant(contestant, game)
+    if can_register?(contestant, game)
+			@registered_contestants[game] << contestant
+			return contestant
+		else
+			return false
+		end
 	end
 end
