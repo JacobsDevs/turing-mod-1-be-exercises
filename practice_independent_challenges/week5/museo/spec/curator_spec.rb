@@ -25,9 +25,9 @@ RSpec.describe Curator do
 						year: "1941"      
 			})
 
-			curator.add_photograph(photo1)
-			curator.add_photograph(photo2)
-			expect(curator.photographs).to eq([photo1, photo2])
+			curator.add_photograph(photo_1)
+			curator.add_photograph(photo_2)
+			expect(curator.photographs).to eq([photo_1, photo_2])
 		end
 	  
 		it 'can #add_artist' do
@@ -70,5 +70,6 @@ RSpec.describe Curator do
 				curator.add_artist(artist_1)
 				curator.add_artist(artist_2)
 				expect(curator.find_artist_by_id("1")).to eq(artist_1)
+		end
 	end
 end
