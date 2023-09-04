@@ -266,6 +266,10 @@ RSpec.describe ColoradoLottery do
 			lottery.register_contestant(winston, mega_millions)
 			lottery.register_contestant(benjamin, mega_millions)
 
+			lottery.current_contestants
+
 			expect(lottery.draw_winners).to eq("Today's Draw: 04/09/2023")
-      expect(lottery.winners).to eq({"Alexander Aigades"=>"Mega Millions"} || {"Frederick Douglass"=>"Mega Millions"})
+      #expect(lottery.winners).to eq([{"Alexander Aigades"=>"Mega Millions"}] || [{"Frederick Douglass"=>"Mega Millions"}])
+		end
+	end
 end

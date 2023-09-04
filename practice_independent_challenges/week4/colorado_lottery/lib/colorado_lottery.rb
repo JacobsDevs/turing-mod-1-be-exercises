@@ -1,3 +1,5 @@
+require 'date'
+
 class ColoradoLottery
   attr_reader :registered_contestants,
 							:winners,
@@ -45,5 +47,20 @@ class ColoradoLottery
 
 	def charge(contestants, game)
 		contestants.each {|contestant| contestant.spending_money -= game.cost}
+	end
+
+	def draw_winners
+	  @current_contestants.each do |game, contestants|
+			@winners << {contestants.sample=>game.name}
+		end
+		announce_winner
+		"Today's Draw: #{Time.now.strftime("%d/%m/%Y")}"	  
+	end
+	
+	def announce_winner
+	  @winners.each do |winner|
+			#require 'pry'; binding.pry
+			puts "Congratulations #{winner.keys[0]}, you've won #{winner.values[0]}!"
+		end
 	end
 end
