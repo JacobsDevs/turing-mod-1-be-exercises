@@ -156,8 +156,17 @@ RSpec.describe Curator do
 		end
 		it 'can #build_artists' do
 		  curator = Curator.new
-			curator.build_artists('./data/photographs.csv')
+			curator.build_artists('./data/artists.csv')
 			expect(curator.artists[0]).to be_an_instance_of Artist
+		end
+	end
+
+	describe 'Iteration Methods' do
+		it 'can list #photographs_in_date_range' do
+		  curator = Curator.new
+			curator.build_artists('./data/artists.csv')
+			curator.build_photographs('./data/photographs.csv')
+			expect(curator.photographs_in_date_range(1954..1962).length).to eq(3)
 		end
 	end
 end
