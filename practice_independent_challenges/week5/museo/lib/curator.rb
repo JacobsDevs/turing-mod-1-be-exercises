@@ -61,7 +61,7 @@ class Curator
 	end
 
 	def artist_age_when_photographed(artist, photograph)
-	  handle_photograph(photograph).year - handle_artist(artist).born
+	  handle_photograph(photograph).year.to_i - handle_artist(artist).born.to_i
 	end
 
 	def handle_artist(artist)
@@ -69,6 +69,14 @@ class Curator
 			return artist
 		elsif artist.is_a?(String)
 			@artists.find {|artist_data| artist_data.name == artist}
+		end
+	end
+
+	def handle_photograph(photograph)
+		if photograph.is_a?(Photograph)
+			return photograph
+		elsif photograph.is_a?(String)
+			@photographs.find {|photograph_data| photograph_data.name == photograph}
 		end
 	end
 end

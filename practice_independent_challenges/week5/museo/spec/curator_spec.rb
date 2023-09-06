@@ -202,5 +202,13 @@ RSpec.describe Curator do
 			expect(curator.handle_photograph(photo_1)).to be_an_instance_of Photograph
 			expect(curator.handle_photograph("Portrait of Alberto Giacometti")).to be_an_instance_of Photograph
 		end
+
+		it 'can list #other_photographs_from_year' do
+		  curator = Curator.new
+			curator.build_photographs('./data/photographs.csv')
+			curator.build_artists('./data/artists.csv')
+			expect(curator.other_photographs_from_year('Diane Arbus', 44)[0].name).to eq('Identical Twins, Roselle, New Jersey')
+			expect(curator.other_photographs_from_year('Diane Arbus', 44)[1].name).to eq('Two Girls In Matching Bathing Suits')
+		end
 	end
 end
