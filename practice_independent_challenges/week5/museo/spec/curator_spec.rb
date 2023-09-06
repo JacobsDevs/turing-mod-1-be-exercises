@@ -149,10 +149,15 @@ RSpec.describe Curator do
 	end
 
 	describe 'file_io compatability' do
-	  it 'can #build_photos' do
+	  it 'can #build_photographs' do
 		  curator = Curator.new
-			curator.build_photos('./data/photographs.csv')
-			expect(curator.photographs).to eq([])
+			curator.build_photographs('./data/photographs.csv')
+			expect(curator.photographs[0]).to be_an_instance_of Photograph
+		end
+		it 'can #build_artists' do
+		  curator = Curator.new
+			curator.build_artists('./data/photographs.csv')
+			expect(curator.artists[0]).to be_an_instance_of Artist
 		end
 	end
 end

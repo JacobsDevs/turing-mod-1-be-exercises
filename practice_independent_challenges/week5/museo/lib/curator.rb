@@ -1,3 +1,6 @@
+require './lib/file_io'
+require './lib/photograph'
+
 class Curator
 	attr_reader :artists,
 							:photographs
@@ -36,5 +39,12 @@ class Curator
 
 	def photographs_from_country(country)
 		artists_and_photographs.select {|artist, photos| artist if artist.country == country}.values.flatten
+	end
+
+	def build_photographs(path)
+	  file_io = FileIo.new
+		file_io.read_csv(path).each do |photo_data|
+			add_photograph(Photograph.new(photo_data))
+		end
 	end
 end

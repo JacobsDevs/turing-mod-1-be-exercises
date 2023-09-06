@@ -4,7 +4,7 @@ class FileIo
   def initialize
 	end
 
-	def read_artist_csv(path)
-	  CSV.readlines(path, headers: true)
+	def read_csv(path)
+	  data = CSV.foreach(path, headers: true, header_converters: :symbol).map(&:to_h)
 	end
 end
