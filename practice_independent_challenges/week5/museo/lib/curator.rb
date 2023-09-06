@@ -55,4 +55,8 @@ class Curator
 			add_artist(Artist.new(artist_data))
 		end
 	end
+
+	def photographs_in_date_range(range)
+		photographs.select {|photograph| range.include?(photograph.year.to_i)}
+	end
 end
