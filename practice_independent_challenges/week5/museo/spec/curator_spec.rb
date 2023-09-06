@@ -147,4 +147,12 @@ RSpec.describe Curator do
 			expect(@curator.photographs_from_country("United States")).to eq([@photo_4, @photo_5])
 		end
 	end
+
+	describe 'file_io compatability' do
+	  it 'can #build_photos' do
+		  curator = Curator.new
+			curator.build_photos('./data/photographs.csv')
+			expect(curator.photographs).to eq([])
+		end
+	end
 end
