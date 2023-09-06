@@ -168,5 +168,11 @@ RSpec.describe Curator do
 			curator.build_photographs('./data/photographs.csv')
 			expect(curator.photographs_in_date_range(1954..1962).length).to eq(2)
 		end
+		it 'can find #artist_age_when_painting' do
+			curator = Curator.new
+			curator.build_artists('./data/artists.csv')
+			curator.build_photographs('./data/photographs.csv')
+			expect(curator.artist_age_when_painting('Ansel Adams', 'Moonrise, Hernandez')).to eq(39)
+		end
 	end
 end
