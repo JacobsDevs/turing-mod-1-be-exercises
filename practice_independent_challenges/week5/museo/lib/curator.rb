@@ -47,4 +47,11 @@ class Curator
 			add_photograph(Photograph.new(photo_data))
 		end
 	end
+
+	def build_artists(path)
+	  file_io = FileIo.new
+		file_io.read_csv(path).each do |artist_data|
+			add_artist(Artist.new(artist_data))
+		end
+	end
 end
