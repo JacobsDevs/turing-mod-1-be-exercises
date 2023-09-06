@@ -61,7 +61,7 @@ class Curator
 	end
 
 	def artist_age_when_photographed(artist, photograph)
-	  
+	  handle_photograph(photograph).year - handle_artist(artist).born
 	end
 
 	def handle_artist(artist)

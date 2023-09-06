@@ -177,7 +177,6 @@ RSpec.describe Curator do
 		it 'can #handle_artist' do
 			curator = Curator.new
 			curator.build_artists('./data/artists.csv')
-			curator.build_photographs('./data/photographs.csv')
 			artist_1 = Artist.new({
 				id: "1",      
 				name: "Henri Cartier-Bresson",      
@@ -185,9 +184,23 @@ RSpec.describe Curator do
 				died: "2004",      
 				country: "France"      
 				})
-				curator.add_artist(artist_1)
+			curator.add_artist(artist_1)
 			expect(curator.handle_artist(artist_1)).to be_an_instance_of Artist
 			expect(curator.handle_artist("Henri Cartier-Bresson")).to be_an_instance_of Artist
+		end
+
+		it 'can #handle_photograph' do
+			curator = Curator.new
+			curator.build_photographs('./data/photographs.csv')
+			photo_1 = Photograph.new({
+				id: "1",      
+				name: "Portrait of Alberto Giacometti",      
+				artist_id: "1",      
+				year: "1938"      
+			})
+			curator.add_photograph(photo_1)
+			expect(curator.handle_photograph(photo_1)).to be_an_instance_of Photograph
+			expect(curator.handle_photograph("Portrait of Alberto Giacometti")).to be_an_instance_of Photograph
 		end
 	end
 end
