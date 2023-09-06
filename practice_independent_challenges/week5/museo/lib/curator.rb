@@ -79,4 +79,9 @@ class Curator
 			@photographs.find {|photograph_data| photograph_data.name == photograph}
 		end
 	end
+
+	def other_photographs_from_year(artist, age)
+		year = age + handle_artist(artist).born.to_i
+		@photographs.select { |photo| photo.year == year.to_s && photo.artist_id == handle_artist(artist).id}
+	end
 end
