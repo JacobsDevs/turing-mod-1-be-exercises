@@ -59,4 +59,8 @@ class Curator
 	def photographs_in_date_range(range)
 		photographs.select {|photograph| range.include?(photograph.year.to_i)}
 	end
+
+	def artist_age_when_photographed(artist, photograph)
+	  
+	end
 end

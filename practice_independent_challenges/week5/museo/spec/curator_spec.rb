@@ -168,11 +168,26 @@ RSpec.describe Curator do
 			curator.build_photographs('./data/photographs.csv')
 			expect(curator.photographs_in_date_range(1954..1962).length).to eq(2)
 		end
-		it 'can find #artist_age_when_painting' do
+		it 'can find #artist_age_when_photographed' do
 			curator = Curator.new
 			curator.build_artists('./data/artists.csv')
 			curator.build_photographs('./data/photographs.csv')
-			expect(curator.artist_age_when_painting('Ansel Adams', 'Moonrise, Hernandez')).to eq(39)
+			expect(curator.artist_age_when_photographed('Ansel Adams', 'Moonrise, Hernandez')).to eq(39)
+		end
+		it 'can #handle_artist' do
+			curator = Curator.new
+			curator.build_artists('./data/artists.csv')
+			curator.build_photographs('./data/photographs.csv')
+			artist_1 = Artist.new({
+				id: "1",      
+				name: "Henri Cartier-Bresson",      
+				born: "1908",      
+				died: "2004",      
+				country: "France"      
+				})
+				curator.add_artist(artist_1)
+			expect(curator.handle_artist(artist_1)).to be_an_instance_of Artist
+			expect(curator.handle_artist("Henri Cartier-Bresson")).to be_an_instance_of Artist
 		end
 	end
 end
